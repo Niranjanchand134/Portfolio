@@ -42,15 +42,31 @@ export const Chips = ({
 
 export const ExpRow = ({ item }: { item: Exp }) => (
   <div className="exp-row">
-    <div className={`exp-logo${item.logoVariant ? ` ${item.logoVariant}-logo` : ""}`} aria-hidden="true">
-      {item.logo ? (
-        <img src={item.logo} alt="" loading="lazy" />
-      ) : (
-        <span className="exp-logo-fallback">{item.logoText ?? item.o[0]}</span>
-      )}
-    </div>
+    {item.website ? (
+      <a
+        className="exp-logo-link"
+        href={item.website}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`Visit ${item.o} website (opens in a new tab)`}
+      >
+        <div className={`exp-logo${item.logoVariant ? ` ${item.logoVariant}-logo` : ""}`} aria-hidden="true">
+          {item.logo ? <img src={item.logo} alt="" loading="lazy" /> : <span className="exp-logo-fallback">{item.logoText ?? item.o[0]}</span>}
+        </div>
+      </a>
+    ) : (
+      <div className={`exp-logo${item.logoVariant ? ` ${item.logoVariant}-logo` : ""}`} aria-hidden="true">
+        {item.logo ? <img src={item.logo} alt="" loading="lazy" /> : <span className="exp-logo-fallback">{item.logoText ?? item.o[0]}</span>}
+      </div>
+    )}
     <div className="exp-content">
-      <div className="exp-org">{item.o}</div>
+      {item.website ? (
+        <a className="exp-org exp-org-link" href={item.website} target="_blank" rel="noopener noreferrer">
+          {item.o}
+        </a>
+      ) : (
+        <div className="exp-org">{item.o}</div>
+      )}
       <div className="exp-role">{item.t}</div>
       {item.location && <div className="exp-location">{item.location}</div>}
       {item.p && (

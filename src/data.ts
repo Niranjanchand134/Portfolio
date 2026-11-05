@@ -23,6 +23,7 @@ export interface Exp {
   w: string;
   t: string;
   o: string;
+  website?: string;
   logo?: string;
   logoVariant?: "company" | "education";
   logoText?: string;
@@ -71,7 +72,7 @@ export const D: Data = {
   stats: [
     { to: 2, s: "", l: "Companies" },
     { to: 13, s: "", l: "Projects" },
-    { to: 5, s: "+ yrs", l: "Building software" },
+    { to: 16, s: " mos", l: "Professional experience" },
   ],
   steps: [
     {
@@ -391,6 +392,7 @@ export const D: Data = {
       w: "16 Sep 2025 - 15 Oct 2026",
       t: "Full Stack Developer",
       o: "Crimson Tech Pvt. Ltd.",
+      website: "https://crimsontech.io/",
       logo: "/logos/crimsontechlogo.png",
       logoVariant: "company",
       location: "Balkumari, Lalitpur, Nepal",
@@ -406,6 +408,7 @@ export const D: Data = {
       w: "May 2025 - Aug 2025 (3 months)",
       t: "Frontend Developer Intern",
       o: "Saayami Technology Pvt. Ltd.",
+      website: "https://saayami.com/",
       logo: "/logos/saayamilogo.png",
       logoVariant: "company",
       location: "Lalitpur, Nepal",
@@ -470,7 +473,7 @@ export const D: Data = {
     "13 months at Crimson Tech",
     "BICT (Hons) Software Engineering",
   ],
-  resume: "#",
+  resume: "",
   quotes: [],
   links: [
     ["GitHub", "https://github.com/Niranjanchand134"],

@@ -615,6 +615,12 @@ section.s {
   transition: transform 0.25s ease;
 }
 
+.exp-logo-link {
+  display: block;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
 .exp-row:hover .exp-logo {
   transform: scale(1.08);
 }
@@ -668,6 +674,22 @@ section.s {
   font-family: var(--head);
   line-height: 1.3;
   transition: color 0.25s ease;
+}
+
+.exp-org-link {
+  display: block;
+  text-decoration: none;
+}
+
+.exp-org-link:focus-visible,
+.exp-logo-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 3px;
+}
+
+.exp-org-link:hover {
+  color: var(--accent);
 }
 
 .exp-row:hover .exp-org {
